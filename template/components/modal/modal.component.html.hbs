@@ -1,0 +1,8 @@
+<app-modal header="{{entityName}}s" (submit)="accept($event)">
+  <form [formGroup]="formGroup" class="grid" (click)="$event.stopPropagation()">
+    <div class="col-span-12">
+      <app-input [form]="formGroup" name="id" placeholder="id" label="id">
+      </app-input>
+    </div>
+  </form>
+</app-modal>
