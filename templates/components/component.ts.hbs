@@ -1,27 +1,27 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { {{entityName}}ModalComponent } from './modal/modal.component';
-import { {{entityName}}Service } from '../../../core/service/{{entityName.toLowerCase()}}/{{entityName.toLowerCase()}}.service';
+import { {{className}}ModalComponent } from './modal/{{kebabName}}-modal.component';
+import { {{className}}Service } from '../../../core/service/{{kebabName}}/{{kebabName}}.service';
 import { ListPageComponent } from '../../../core/class/list-page-component';
 
 @Component({
-  selector: 'app-{{entityName.toLowerCase()}}s',
-  templateUrl: './{{entityName.toLowerCase()}}s.component.html',
-  styleUrls: ['./{{entityName.toLowerCase()}}s.component.scss'],
+  selector: 'app-{{kebabName}}',
+  templateUrl: './{{kebabName}}.component.html',
+  styleUrls: ['./{{kebabName}}.component.scss'],
 })
-export class {{entityName}}sComponent extends ListPageComponent {
+export class {{className}}Component extends ListPageComponent {
 
   override displayedColumns = [
     'id',
     'actions'
   ]
 
-  override modal = {{entityName}}ModalComponent
+  override modal = {{className}}ModalComponent
 
   constructor(
-    private {{entityName.toLowerCase()}}Service: {{entityName}}Service,
+    private {{instanceName}}Service: {{className}}Service,
     private matDialog: MatDialog,
   ) {
-    super({{entityName.toLowerCase()}}Service, matDialog)
+    super({{kebabName}}Service, matDialog)
   }
 }

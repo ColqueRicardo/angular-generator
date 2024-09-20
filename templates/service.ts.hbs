@@ -2,14 +2,14 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ErrorService } from '../service-error/error-service.service';
 import { CommonService } from '../common-service/CommonService';
-import { {{entityName}}Model } from '../../model/{{entityName.toLowerCase()}}.model';
+import { {{className}}Model } from '../../model/{{kebabName}}.model';
 
 @Injectable({
   providedIn: 'any'
 })
-export class {{entityName}}Service extends CommonService<{{entityName}}Model> {
-  override url = '{{entityName.toLowerCase()}}';
-  override model = {{entityName}}Model;
+export class {{className}}Service extends CommonService<{{className}}Model> {
+  override url = '{{intanceName}}';
+  override model = {{className}}Model;
   constructor(httpClient: HttpClient, errorService: ErrorService) {
     super(httpClient, errorService);
   }

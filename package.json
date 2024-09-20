@@ -1,0 +1,17 @@
+{
+  "name": "angular-generator",
+  "version": "1.0.0",
+  "main": "generator.ts",
+  "scripts": {
+    "generate": "ts-node ./generator.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "handlebars": "^4.7.8",
+    "path": "^0.12.7",
+    "pluralize": "^8.0.0"
+  }
+}

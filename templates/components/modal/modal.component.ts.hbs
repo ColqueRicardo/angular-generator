@@ -2,22 +2,22 @@ import { Component, Inject } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { ModalComponent } from '../../../../core/class/modal-class';
-import { {{entityName}}Model } from '../../../../core/model/{{entityNameLowerCase}}.model';
-import { {{entityName}}Service } from '../../../../core/service/{{entityNameLowerCase}}/{{entityNameLowerCase}}.service';
+import { {{className}}Model } from '../../../../core/model/{{kebabClass}}.model';
+import { {{className}}Service } from '../../../../core/service/{{kebabClass}}/{{kebabClass}}.service';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 
 @UntilDestroy()
 @Component({
-  selector: 'app-{{entityNameLowerCase}}-modal',
-  templateUrl: './{{entityNameLowerCase}}-modal.component.html',
-  styleUrls: ['./{{entityNameLowerCase}}-modal.component.scss']
+  selector: 'app-{{kebabClass}}-modal',
+  templateUrl: './{{kebabClass}}-modal.component.html',
+  styleUrls: ['./{{kebabClass}}-modal.component.scss']
 })
-export class {{entityName}}ModalComponent extends ModalComponent {
-  override model = {{entityName}}Model
+export class {{className}}ModalComponent extends ModalComponent {
+  override model = {{className}}Model
   constructor(
     protected override dialogRef: MatDialogRef<any>,
     @Inject(MAT_DIALOG_DATA) public override dt: any,
-    protected override service: {{entityName}}Service,
+    protected override service: {{className}}Service,
     private fb: FormBuilder,
   ) {
     super(dialogRef, dt, service)
