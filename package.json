@@ -1,5 +1,5 @@
 {
-  "name": "angular-generator",
+  "name": "gr-generator-angular",
   "version": "1.0.0",
   "main": "generator.ts",
   "scripts": {
