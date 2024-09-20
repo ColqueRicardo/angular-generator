@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "generator.ts",
   "scripts": {
+    "build": "tsc generator.ts",
     "generate": "ts-node ./generator.ts"
   },
   "author": "",
@@ -13,5 +14,8 @@
     "handlebars": "^4.7.8",
     "path": "^0.12.7",
     "pluralize": "^8.0.0"
+  },
+  "bin": {
+    "gr-generator-angular": "./generator.js"
   }
 }
