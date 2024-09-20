@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { {{className}}ModalComponent } from './modal/{{kebabName}}-modal.component';
-import { {{className}}Service } from '../../../core/service/{{kebabName}}/{{kebabName}}.service';
-import { ListPageComponent } from '../../../core/class/list-page-component';
+import { {{className}}Service } from '../../../../core/service/{{kebabName}}/{{kebabName}}.service';
+import { {{className}}Model } from '../../../../core/model/{{kebabName}}.model';
+import { ListPageComponent } from '../../../../core/class/list-page-component';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-{{kebabName}}',
@@ -10,18 +12,17 @@ import { ListPageComponent } from '../../../core/class/list-page-component';
   styleUrls: ['./{{kebabName}}.component.scss'],
 })
 export class {{className}}Component extends ListPageComponent {
-
-  override displayedColumns = [
-    'id',
-    'actions'
+  override breadcrumb = [
+    { label: 'Home', link: '/' },
   ]
-
+  override model = new {{className}}Model()
+  override addFilter: boolean = true
   override modal = {{className}}ModalComponent
-
   constructor(
     private {{instanceName}}Service: {{className}}Service,
     private matDialog: MatDialog,
+    private fb: FormBuilder
   ) {
-    super({{instanceName}}Service, matDialog)
+    super({{instanceName}}Service, matDialog, fb)
   }
 }

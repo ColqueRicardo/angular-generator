@@ -8,7 +8,7 @@ import { {{className}}Model } from '../../model/{{kebabName}}.model';
   providedIn: 'any'
 })
 export class {{className}}Service extends CommonService<{{className}}Model> {
-  override url = '{{intanceName}}';
+  override url = '{{instanceName}}';
   override model = {{className}}Model;
   constructor(httpClient: HttpClient, errorService: ErrorService) {
     super(httpClient, errorService);

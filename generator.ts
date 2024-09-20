@@ -19,8 +19,8 @@ if (!pluralWord || !projectPath) {
 const baseDir = path.join(projectPath, 'app', 'core');
 const servicePath = path.join(baseDir, 'service', names.kebabName);
 const modelPath = path.join(baseDir, 'model', `${names.kebabName}.model.ts`);
-const componentsPath = path.join(projectPath, 'app', 'private', 'components', `${names.kebabName}`);
-const componentModalPath = path.join(projectPath, 'app', 'private', 'components', `${names.kebabName}`, 'modal');
+const componentsPath = path.join(projectPath, 'app', "main", 'private', 'components', `${names.kebabName}`);
+const componentModalPath = path.join(projectPath, 'app', "main", 'private', 'components', `${names.kebabName}`, 'modal');
 const templatesDir = `C:/Users/rc/Desktop/project test/scripter/angular-generator/templates`
 const templatesDirComponent = `${templatesDir}\\components`
 const templatesDirModal = `${templatesDir}\\components\\modal`
@@ -131,9 +131,8 @@ async function modifyPrivateModuleAddImport() {
       insertIndex++;
     }
 
-    // Construir las importaciones a agregar
-    const importStatement = `import { ${names.className}Component } from '../../private/components/${names.kebabName}/${names.kebabName}.component';
-import { ${names.className}ModalComponent } from '../../private/components/${names.kebabName}/modal/${names.kebabName}-modal.component';
+    const importStatement = `import { ${names.className}Component } from './components/${names.kebabName}/${names.kebabName}.component';
+import { ${names.className}ModalComponent } from './components/${names.kebabName}/modal/${names.kebabName}-modal.component';
 import { ${names.className}Service } from '../../core/service/${names.kebabName}/${names.kebabName}.service';`;
 
     // Insertar las nuevas importaciones justo después del último import
